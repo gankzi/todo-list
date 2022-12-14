@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do List</title>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <img
+          src="../src/css/check-underline.svg"
+          alt="logo"
+          id="logo"
+          class="filter-white"
+        />
+        Todo List
+      </h1>
+    </header>
+    <div id="main">
+      <nav>
+        <div id="todo">
+          <button>
+            <img src="../src/css/inbox.svg" alt="inbox-img" />
+            Inbox
+          </button>
+          <button>
+            <img src="../src/css/calendar-today-outline.svg" alt="today-img" />
+            Today
+          </button>
+          <button>
+            <img src="../src/css/calendar-month-outline.svg" alt="week-img" />
+            This week
+          </button>
+        </div>
+        <div id="projects">
+          <h2 class="project-heading">Projects</h2>
+        </div>
+      </nav>
+      <div id="main-content">
+        <h2>Inbox</h2>
+        <div id="main-todo">
+          <button>
+            <img src="../src/css/plus.svg" alt="plus-img" class="plus" /> Add
+            Task
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="bundle.js"></script>
+  </body>
+</html>
