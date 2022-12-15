@@ -76,7 +76,21 @@
             </div>
           </form>
           <div id="tasks">
-            <div class="unchecked"></div>
+            <div class="task done">
+              <div class="status checked high"></div>
+              <p class="task-title done">Title</p>
+              <p class="task-description done">Description</p>
+              <p class="task-date">31/12/2022</p>
+              <button class="task-edit">
+                <img src="../src/css/circle-edit-outline.svg" alt="edit-img" />
+              </button>
+              <button class="task-delete">
+                <img
+                  src="../src/css/trash-can-outline.svg"
+                  alt="trash-can-img"
+                />
+              </button>
+            </div>
           </div>
           <button id="add-task-button">
             <img src="../src/css/plus.svg" alt="plus-img" class="plus" /> Add
@@ -85,6 +99,10 @@
         </div>
       </div>
     </div>
+    <footer>
+      Created by Gankzi 2022
+      <img src="../src/css/github.svg" alt="github-img" />
+    </footer>
     <script src="bundle.js"></script>
   </body>
 </html>
