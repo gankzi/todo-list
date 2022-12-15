@@ -36,12 +36,49 @@
         </div>
         <div id="projects">
           <h2 class="project-heading">Projects</h2>
+          <div class="project-list">
+            <form id="new-project" action="" method="get">
+              <input type="text" />
+              <button type="submit" form="new-project" id="add-new-project">
+                +
+              </button>
+              <button id="cancel-new-project">x</button>
+            </form>
+            <button id="add-project">
+              <img src="../src/css/plus.svg" alt="plus-img" class="plus" /> Add
+              Project
+            </button>
+          </div>
         </div>
       </nav>
       <div id="main-content">
-        <h2>Inbox</h2>
+        <h2 id="main-heading">Inbox</h2>
         <div id="main-todo">
-          <button>
+          <form id="new-task" action="" method="get">
+            <h3>New Task</h3>
+            <button class="cancel-add-task">x</button>
+            <div class="new-task-info">
+              <label for="title">Title:</label>
+              <input type="text" id="title" />
+              <label for="description">Description:</label>
+              <input type="text" id="description" />
+              <label for="due-date">Due Date:</label>
+              <input type="date" id="due-date" />
+              <label for="priority-select">Priority:</label>
+              <select name="priority" id="priority-select">
+                <option value="low" id="low">Low</option>
+                <option value="medium" id="medium">Medium</option>
+                <option value="high" id="high">High</option>
+              </select>
+              <button type="submit" form="new-task" class="add-task">
+                Add
+              </button>
+            </div>
+          </form>
+          <div id="tasks">
+            <div class="unchecked"></div>
+          </div>
+          <button id="add-task-button">
             <img src="../src/css/plus.svg" alt="plus-img" class="plus" /> Add
             Task
           </button>
