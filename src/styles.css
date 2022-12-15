@@ -237,3 +237,93 @@ h2 {
     right: 10px;
     font-size: 1rem;
 }
+
+.task {
+    display: flex;
+    gap: 10px;
+    width: 80%;
+    padding: 10px;
+}
+
+.task-edit:hover {
+    filter: invert(8%) sepia(100%) saturate(6844%) hue-rotate(247deg) brightness(102%) contrast(143%);
+}
+
+.task-delete:hover {
+    filter: invert(10%) sepia(94%) saturate(7500%) hue-rotate(6deg) brightness(102%) contrast(112%);
+}
+
+.task button {
+    background: none;
+    cursor: pointer;
+    border: none;
+}
+
+.task img {
+    width: 20px;
+    height: 20px;
+}
+
+.status {
+    margin-left: 5px;
+}
+
+.task-title {
+    margin-left: 15px;
+    width: 10%;
+}
+
+.task-description {
+    flex: 1;
+}
+
+.unchecked {
+    border-radius: 50%;
+    border: 2px solid;
+    width: 10px;
+    height: 10px;
+}
+
+.checked {
+    background-image: url(./css/check-bold.svg);
+    border-radius: 50%;
+    border: 2px solid black;
+    width: 10px;
+    height: 10px;
+}
+
+.low {
+    border-color: var(--low);
+}
+
+.medium {
+    border-color: var(--medium);
+}
+
+.high {
+    border-color: var(--high);
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+footer {
+    background-color: var(--main-color);
+    height: 3vh;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer img {
+    width: 20px;
+    height: 20px;
+}
