@@ -1,7 +1,12 @@
 * {
     margin: 0;
     padding: 0;
+    --main-color: lightslategray;
+    --sub-color: lightcyan;
     --hover-color: #ebf2f1;
+    --low: #a6ff66;
+    --medium: #fad046;
+    --high: #ff5729;
 }
 
 body {
@@ -10,7 +15,7 @@ body {
 
 header {
     height: 8vh;
-    background-color: lightslategray;
+    background-color: var(--main-color);
     display: flex;
     align-items: center;
 }
@@ -40,7 +45,7 @@ header h1 {
 
 nav {
     width: 12vw;
-    background-color: lightcyan;
+    background-color: var(--sub-color);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -54,7 +59,7 @@ nav {
     margin-bottom: 20px;
 }
 
-nav button {
+#todo button {
     display: flex;
     width: 80%;
     padding: 10px;
@@ -66,15 +71,15 @@ nav button {
     gap: 8px;
 }
 
-nav button:hover {
+#todo button:hover {
     background: var(--hover-color);
 }
 
-nav button:active {
+#todo button:active {
     background: var(--hover-color);
 }
 
-nav button:focus {
+#todo button:focus {
     background: var(--hover-color);
 }
 
@@ -83,10 +88,46 @@ nav img {
     height: 25px;
 }
 
+#projects {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .project-heading {
     font-size: 1.8rem;
     font-weight: bold;
 }
+
+
+#projects input {
+    height: 30px;
+    border-radius: 8px;
+}
+
+#new-project {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-items: center;
+}
+
+#add-new-project, #cancel-new-project {
+    border: .5px solid black;
+    border-radius: 8px;
+    height: 30px;
+    width: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#add-new-project {
+    background: var(--low);
+}
+
+#cancel-new-project {
+    background: var(--high);
+}   
 
 #main-content {
     flex: 1;
@@ -98,7 +139,7 @@ h2 {
     font-size: 2rem;
 }
 
-#main-content button {
+#add-task-button {
     margin-top: 20px;
     display: flex;
     width: 80%;
@@ -111,11 +152,88 @@ h2 {
     background: none;
 }
 
-#main-content button:hover {
+#add-task-button:hover {
+    background: var(--hover-color);
+}
+
+#add-project {
+    display: flex;
+    width: 80%;
+    padding: 10px;
+    border-radius: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    gap: 8px;
+}
+
+#add-project:hover {
     background: var(--hover-color);
 }
 
 .plus {
     width: 25px;
     height: 25px;
+}
+
+#new-task {
+    margin-top: 20px;
+    width: 80%;
+    border: .5px solid black;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px;
+    position: relative;
+}
+
+.new-task-info {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+#new-task input, #new-task select {
+    border-radius: 8px;
+    border: .2px solid black;
+}
+
+#new-task select {
+    background: white;
+}
+
+#description {
+    width: 50%;
+}
+
+#low {
+    background: var(--low);
+}
+
+#medium {
+    background: var(--medium);
+}
+
+#high {
+    background: var(--high);
+}
+
+.add-task {
+    background: var(--sub-color);
+    border: 0.5px solid black;
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 8px;
+}
+
+.cancel-add-task {
+    background: none;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 1rem;
 }
