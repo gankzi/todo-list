@@ -37,6 +37,15 @@
         <div id="projects">
           <h2 class="project-heading">Projects</h2>
           <div class="project-list">
+            <div class="list-of-projects">
+              <button>
+                <img
+                  src="../src/css/format-list-checkbox.svg"
+                  alt="project-img"
+                />
+                Shopping
+              </button>
+            </div>
             <form id="new-project" action="" method="get">
               <input type="text" />
               <button type="submit" form="new-project" id="add-new-project">
@@ -45,15 +54,32 @@
               <button id="cancel-new-project">x</button>
             </form>
             <button id="add-project">
-              <img src="../src/css/plus.svg" alt="plus-img" class="plus" /> Add
-              Project
+              <img src="../src/css/plus.svg" alt="plus-img" class="plus" />
+              Add Project
             </button>
           </div>
         </div>
       </nav>
       <div id="main-content">
-        <h2 id="main-heading">Inbox</h2>
+        <h2 id="main-heading">Shopping</h2>
         <div id="main-todo">
+          <div id="tasks">
+            <div class="task done">
+              <div class="status checked high"></div>
+              <p class="task-title done">Title</p>
+              <p class="task-description done">Description</p>
+              <p class="task-date">31/12/2022</p>
+              <button class="task-edit">
+                <img src="../src/css/circle-edit-outline.svg" alt="edit-img" />
+              </button>
+              <button class="task-delete">
+                <img
+                  src="../src/css/trash-can-outline.svg"
+                  alt="trash-can-img"
+                />
+              </button>
+            </div>
+          </div>
           <form id="new-task" action="" method="get">
             <h3>New Task</h3>
             <button class="cancel-add-task">x</button>
@@ -75,23 +101,6 @@
               </button>
             </div>
           </form>
-          <div id="tasks">
-            <div class="task done">
-              <div class="status checked high"></div>
-              <p class="task-title done">Title</p>
-              <p class="task-description done">Description</p>
-              <p class="task-date">31/12/2022</p>
-              <button class="task-edit">
-                <img src="../src/css/circle-edit-outline.svg" alt="edit-img" />
-              </button>
-              <button class="task-delete">
-                <img
-                  src="../src/css/trash-can-outline.svg"
-                  alt="trash-can-img"
-                />
-              </button>
-            </div>
-          </div>
           <button id="add-task-button">
             <img src="../src/css/plus.svg" alt="plus-img" class="plus" /> Add
             Task
@@ -101,7 +110,7 @@
     </div>
     <footer>
       Created by Gankzi 2022
-      <img src="../src/css/github.svg" alt="github-img" />
+      <a href=""><img src="../src/css/github.svg" alt="github-img" /></a>
     </footer>
     <script src="bundle.js"></script>
   </body>
