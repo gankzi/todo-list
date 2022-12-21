@@ -13,6 +13,8 @@ body {
     
 }
 
+/* Heading Section */
+
 header {
     height: 8vh;
     background-color: var(--main-color);
@@ -43,6 +45,8 @@ header h1 {
     height: 92vh;
 }
 
+/* navbar Section */
+
 nav {
     width: 12vw;
     background-color: var(--sub-color);
@@ -59,7 +63,7 @@ nav {
     margin-bottom: 20px;
 }
 
-#todo button {
+#todo button, .list-of-projects button {
     display: flex;
     width: 80%;
     padding: 10px;
@@ -71,7 +75,7 @@ nav {
     gap: 8px;
 }
 
-#todo button:hover {
+#todo button:hover, .list-of-projects button:hover {
     background: var(--hover-color);
 }
 
@@ -110,6 +114,8 @@ nav img {
     align-items: center;
     gap: 5px;
     justify-items: center;
+    margin-top: 10px;
+    display: none;
 }
 
 #add-new-project, #cancel-new-project {
@@ -129,6 +135,8 @@ nav img {
     background: var(--high);
 }   
 
+/* Content Section */
+
 #main-content {
     flex: 1;
     padding-top: 40px;
@@ -137,6 +145,10 @@ nav img {
 
 h2 {
     font-size: 2rem;
+}
+
+#tasks {
+    margin-top: 20px;
 }
 
 #add-task-button {
@@ -187,6 +199,7 @@ h2 {
     gap: 10px;
     padding: 5px;
     position: relative;
+    
 }
 
 .new-task-info {
@@ -243,6 +256,11 @@ h2 {
     gap: 10px;
     width: 80%;
     padding: 10px;
+    border-radius: 8px;
+}
+
+.task:hover {
+    background-color: var(--hover-color);
 }
 
 .task-edit:hover {
@@ -307,6 +325,8 @@ h2 {
 .done {
     text-decoration: line-through;
 }
+
+/* footer section */
 
 footer {
     background-color: var(--main-color);

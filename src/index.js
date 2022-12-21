@@ -1,18 +1,40 @@
 import _ from 'lodash';
 import './styles.css';
+import addNProject from './addproject';
 
 const content = document.querySelector("#main-content");
+const addProject = document.querySelector("#add-project");
+const addNewProject = document.querySelector("#add-new-project");
+const cancelNewProject = document.querySelector("#cancel-new-project");
+
+
+addProject.addEventListener('click', openAddProject);
+cancelNewProject.addEventListener('click', closeAddProject);
+addNewProject.addEventListener('click', addNProject)
 
 function component () {
     const element = document.createElement('div');
 
-    element.innerHTML = "Hello";
-    element.classList.add("test");
+    element.innerHTML = "";
 
     return element;
 }
 
+
+function openAddProject() {
+    document.querySelector("#new-project").style.display = "inline-flex";
+}
+
+function closeAddProject() {
+    document.querySelector("#new-project").style.display = "none";
+}
+
+
+
+
 content.append(component());
+
+export default {openAddProject};
 
 
 // Add Project button will ask for name of the project and creates a project
