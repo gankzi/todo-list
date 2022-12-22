@@ -38,20 +38,23 @@
           <h2 class="project-heading">Projects</h2>
           <div class="project-list">
             <div class="list-of-projects">
-              <button>
-                <img
-                  src="../src/css/format-list-checkbox.svg"
-                  alt="project-img"
-                />
-                Shopping
-              </button>
+              <div class="project">
+                <button class="project-title">
+                  <img
+                    src="../src/css/format-list-checkbox.svg"
+                    alt="project-img"
+                  />
+                  Shopping
+                </button>
+                <button class="del-project-button">x</button>
+              </div>
             </div>
             <form id="new-project" action="" method="get">
-              <input type="text" />
+              <input type="text" id="project-name" />
               <button type="submit" form="new-project" id="add-new-project">
                 +
               </button>
-              <button id="cancel-new-project">x</button>
+              <button type="button" id="cancel-new-project">x</button>
             </form>
             <button id="add-project">
               <img src="../src/css/plus.svg" alt="plus-img" class="plus" />

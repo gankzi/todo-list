@@ -1,0 +1,17 @@
+const projectDiv = document.querySelector('.list-of-projects');
+
+
+function displayProjects(projects) {
+
+    for (let i = 0; i < projects.length, i++) {
+        let div = document.createElement('div');
+        let button = document.createElement('button');
+        let img = document.createElement('img');
+        div.setAttribute('id', i);
+        img.setAttribute('src', '../src/css/format-list-checkbox.svg');
+        img.setAttribute('alt', 'project-icon');
+        button.setAttribute('id', i);
+
+        
+    }
+}

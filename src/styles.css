@@ -63,7 +63,7 @@ nav {
     margin-bottom: 20px;
 }
 
-#todo button, .list-of-projects button {
+#todo button {
     display: flex;
     width: 80%;
     padding: 10px;
@@ -75,7 +75,7 @@ nav {
     gap: 8px;
 }
 
-#todo button:hover, .list-of-projects button:hover {
+#todo button:hover, .project:hover {
     background: var(--hover-color);
 }
 
@@ -101,8 +101,38 @@ nav img {
 .project-heading {
     font-size: 1.8rem;
     font-weight: bold;
+} 
+
+.project {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border-radius: 8px;
 }
 
+.project-title {
+    display: flex;
+    width: 80%;
+    padding: 10px;
+    border-radius: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    gap: 8px;
+}
+
+.del-project-button {
+    border-radius: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.del-project-button:hover {
+    color: red;
+}
 
 #projects input {
     height: 30px;

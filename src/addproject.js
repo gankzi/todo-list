@@ -5,18 +5,26 @@ const projects = [];
 
 const projectFactory = (title) => {
     return {title};
-}
+};
 
-function addNewProject() {
+function addNewProject(event) {
     let newProjectName = newProjectInput.value;
 
-    const newProject = new projectFactory(newProjectName);
+    event.preventDefault();
+
+    const newProject = projectFactory(newProjectName);
     projects.push(newProject);
 
     console.log(projects);
+    closeAddProject(event);
 }
 
-export default {addNewProject};
+function closeAddProject(event) {
+    event.preventDefault();
+    document.querySelector("#new-project").style.display = "none";
+}
+
+export {addNewProject};
 
 
 // Add Project button will ask for name of the project and creates a project

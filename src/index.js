@@ -1,38 +1,32 @@
 import _ from 'lodash';
 import './styles.css';
-import addNProject from './addproject';
+import { addNewProject } from './addproject';
 
-const content = document.querySelector("#main-content");
 const addProject = document.querySelector("#add-project");
-const addNewProject = document.querySelector("#add-new-project");
+const addNewProjects = document.querySelector("#add-new-project");
 const cancelNewProject = document.querySelector("#cancel-new-project");
 
 
 addProject.addEventListener('click', openAddProject);
 cancelNewProject.addEventListener('click', closeAddProject);
-addNewProject.addEventListener('click', addNProject)
-
-function component () {
-    const element = document.createElement('div');
-
-    element.innerHTML = "";
-
-    return element;
-}
-
+addNewProjects.addEventListener('click', addNewProject);
 
 function openAddProject() {
     document.querySelector("#new-project").style.display = "inline-flex";
 }
 
-function closeAddProject() {
+function closeAddProject(event) {
+    event.preventDefault();
     document.querySelector("#new-project").style.display = "none";
 }
 
+function component() {
+   const element = document.createElement('div');
+  
+   return element;
+  }
 
-
-
-content.append(component());
+document.body.appendChild(component());
 
 export default {openAddProject};
 
