@@ -1,17 +1,39 @@
+import { deleteProject } from "./addproject";
+
 const projectDiv = document.querySelector('.list-of-projects');
 
 
 function displayProjects(projects) {
 
-    for (let i = 0; i < projects.length, i++) {
+    const projectlist = document.querySelectorAll(".project");
+    projectlist.forEach(project => projectDiv.removeChild(project));
+
+    for (let i = 0; i < projects.length; i++) {
+
         let div = document.createElement('div');
-        let button = document.createElement('button');
+        let projectButton = document.createElement('button');
         let img = document.createElement('img');
+        let delProjectButton = document.createElement('button');
         div.setAttribute('id', i);
+        div.classList.add('project');
         img.setAttribute('src', '../src/css/format-list-checkbox.svg');
         img.setAttribute('alt', 'project-icon');
-        button.setAttribute('id', i);
-
+        projectButton.setAttribute('id', i);
+        projectButton.classList.add('project-title');
+        delProjectButton.classList.add('del-project-button');
+        delProjectButton.setAttribute('id', i);
+        delProjectButton.addEventListener('click', deleteProject);
         
+        projectButton.innerHTML = projects[i].title;
+        projectButton.prepend(img);
+        delProjectButton.innerHTML = "x"
+
+        div.append(projectButton, delProjectButton);
+
+        projectDiv.append(div);   
     }
 }
+
+
+
+export { displayProjects };

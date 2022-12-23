@@ -1,3 +1,5 @@
+import { displayProjects } from "./displayprojects";
+
 const newProjectInput = document.querySelector("#project-name");
 const projects = [];
 
@@ -15,7 +17,7 @@ function addNewProject(event) {
     const newProject = projectFactory(newProjectName);
     projects.push(newProject);
 
-    console.log(projects);
+    displayProjects(projects);
     closeAddProject(event);
 }
 
@@ -24,7 +26,17 @@ function closeAddProject(event) {
     document.querySelector("#new-project").style.display = "none";
 }
 
-export {addNewProject};
+function deleteProject(event) {
+    const index = event.target.id;
+
+    projects.splice(index, 1);
+    
+    displayProjects(projects);
+}
+
+
+
+export {addNewProject, deleteProject};
 
 
 // Add Project button will ask for name of the project and creates a project
