@@ -229,7 +229,7 @@ h2 {
     gap: 10px;
     padding: 5px;
     position: relative;
-    
+    display: none;
 }
 
 .new-task-info {

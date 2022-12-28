@@ -1,4 +1,5 @@
 import { deleteProject } from "./addproject";
+import { renderProjectContent } from "./projectcontents";
 
 const projectDiv = document.querySelector('.list-of-projects');
 
@@ -20,6 +21,8 @@ function displayProjects(projects) {
         img.setAttribute('alt', 'project-icon');
         projectButton.setAttribute('id', i);
         projectButton.classList.add('project-title');
+        projectButton.addEventListener('click', () => 
+        {renderProjectContent(projects[i].title)});
         delProjectButton.classList.add('del-project-button');
         delProjectButton.setAttribute('id', i);
         delProjectButton.addEventListener('click', deleteProject);

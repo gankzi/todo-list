@@ -18,6 +18,7 @@ function addNewProject(event) {
     projects.push(newProject);
 
     displayProjects(projects);
+    clearProjectForm();
     closeAddProject(event);
 }
 
@@ -30,10 +31,12 @@ function deleteProject(event) {
     const index = event.target.id;
 
     projects.splice(index, 1);
-    
     displayProjects(projects);
 }
 
+function clearProjectForm() {
+    newProjectInput.value = "";
+}
 
 
 export {addNewProject, deleteProject};
