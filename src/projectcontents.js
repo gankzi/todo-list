@@ -1,26 +1,36 @@
+import { addToDo } from "./createtodo";
+
 const contentTitle = document.querySelector('#main-heading');
 const addTask = document.querySelector('#add-task-button');
-const newTaskForm = document.querySelector('#new-task');
-const cancelNewTask = document.querySelector('#cancel-add-task');
+const cancelNewTask = document.querySelector('.cancel-add-task');
+const addNewTask = document.querySelector('.add-task');
+
 
 
 addTask.addEventListener('click', openNewTaskForm);
-if (cancelNewTask) {
-cancelNewTask.addEventListener('click', closeNewTaskForm);
-};
+addNewTask.addEventListener('click', addToDo);
 
+
+if (cancelNewTask) {
+    cancelNewTask.addEventListener('click', closeNewTaskForm)
+};
 
 function renderProjectContent (projectName) {
     contentTitle.innerHTML = projectName;
-
 }
 
-function openNewTaskForm() {
-    newTaskForm.style.display = "flex";
+
+
+
+
+function openNewTaskForm(event) {
+    event.preventDefault();
+    document.querySelector('#new-task').style.display = "flex";
 }
 
-function closeNewTaskForm() {
-    newTaskForm.style.display = "none";
+function closeNewTaskForm(event) {
+    event.preventDefault();
+    document.querySelector('#new-task').style.display = "none";
 }
 
 export {renderProjectContent };
