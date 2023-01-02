@@ -17,6 +17,8 @@ if (cancelNewTask) {
 
 function renderProjectContent (projectName) {
     contentTitle.innerHTML = projectName;
+
+    
 }
 
 

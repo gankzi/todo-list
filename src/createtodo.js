@@ -1,3 +1,5 @@
+import { displayToDo } from "./displaytodo";
+
 const todoTitle = document.querySelector('#title');
 const todoDescription = document.querySelector('#description');
 const todoDueDate = document.querySelector('#due-date');
@@ -17,6 +19,8 @@ function addToDo(event) {
     event.preventDefault();
 
     const newToDo = todoFactory(title, description, dueDate, priority);
+    displayToDo(newToDo);
+
 
     console.log(newToDo);
 }
