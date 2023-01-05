@@ -5,8 +5,11 @@ const projects = [];
 
 
 
-const projectFactory = (title) => {
-    return {title};
+const projectFactory = (title, todo) => {
+    
+    todo = [];
+
+    return {title, todo};
 };
 
 function addNewProject(event) {
@@ -20,6 +23,8 @@ function addNewProject(event) {
     displayProjects(projects);
     clearProjectForm();
     closeAddProject(event);
+
+    console.log(projects);
 }
 
 function closeAddProject(event) {
@@ -39,7 +44,7 @@ function clearProjectForm() {
 }
 
 
-export {addNewProject, deleteProject};
+export {addNewProject, deleteProject, projects};
 
 
 // Add Project button will ask for name of the project and creates a project

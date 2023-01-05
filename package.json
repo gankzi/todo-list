@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/gankzi/todo-list#readme",
   "dependencies": {
+    "date-fns": "^2.29.3",
     "lodash": "^4.17.21"
   },
   "devDependencies": {

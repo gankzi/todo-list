@@ -1,4 +1,5 @@
 import { addToDo } from "./createtodo";
+import { displayToDo } from "./displaytodo";
 
 const contentTitle = document.querySelector('#main-heading');
 const addTask = document.querySelector('#add-task-button');
@@ -15,13 +16,12 @@ if (cancelNewTask) {
     cancelNewTask.addEventListener('click', closeNewTaskForm)
 };
 
-function renderProjectContent (projectName) {
+function renderProjectContent (projectName, projectTodo) {
     contentTitle.innerHTML = projectName;
 
-    
+    console.log(projectName, projectTodo);
+    displayToDo(projectTodo);
 }
-
-
 
 
 

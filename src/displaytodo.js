@@ -1,6 +1,12 @@
 const mainTaskDiv = document.querySelector("#tasks");
 
-function displayToDo (newToDo) {
+function displayToDo (todos) {
+    
+    const todoList = document.querySelectorAll(".task");
+    todoList.forEach(todo => mainTaskDiv.removeChild(todo));
+
+    for(let i = 0; i < todos.length; i++) {
+
     const taskDiv = document.createElement('div');
     const statusDiv = document.createElement('div');
     const titleP = document.createElement('p');
@@ -14,7 +20,7 @@ function displayToDo (newToDo) {
     taskDiv.classList.add("task");
 
     statusDiv.classList.add("status", "unchecked")
-    statusDiv.classList.add(newToDo.priority);
+    statusDiv.classList.add(todos[i].priority);
     statusDiv.addEventListener("click", (event) => {
         toggleChecked(event)
         toggleDone(taskDiv)});
@@ -23,9 +29,9 @@ function displayToDo (newToDo) {
     descriptionP.classList.add("task-description");
     dateP.classList.add("taks-date");
 
-    titleP.innerHTML = newToDo.title;
-    descriptionP.innerHTML = newToDo.description;
-    dateP.innerHTML = newToDo.dueDate;
+    titleP.innerHTML = todos[i].title;
+    descriptionP.innerHTML = todos[i].description;
+    dateP.innerHTML = todos[i].dueDate;
 
 
     editButton.classList.add("task-edit");
@@ -41,9 +47,15 @@ function displayToDo (newToDo) {
     deleteButton.append(deleteImg);
 
     taskDiv.append(statusDiv, titleP, descriptionP, dateP, editButton, deleteButton);
-
+   
     mainTaskDiv.append(taskDiv);
+    
+    }
+    console.log(todos);
 }
+
+
+
 
 
 function toggleDone (taskDiv) {

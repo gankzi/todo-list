@@ -22,7 +22,7 @@ function displayProjects(projects) {
         projectButton.setAttribute('id', i);
         projectButton.classList.add('project-title');
         projectButton.addEventListener('click', () => 
-        {renderProjectContent(projects[i].title)});
+        {renderProjectContent(projects[i].title, [...projects[i].todo])});
         delProjectButton.classList.add('del-project-button');
         delProjectButton.setAttribute('id', i);
         delProjectButton.addEventListener('click', deleteProject);
