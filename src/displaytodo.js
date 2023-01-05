@@ -1,4 +1,8 @@
+import { projects } from "./addproject";
+
 const mainTaskDiv = document.querySelector("#tasks");
+const mainHeading = document.querySelector('#main-heading');
+
 
 function displayToDo (todos) {
     
@@ -41,8 +45,11 @@ function displayToDo (todos) {
     editButton.append(editImg);
 
     deleteButton.classList.add("task-delete");
+    deleteButton.addEventListener("click", deleteTodo);
     deleteImg.setAttribute("src", "../src/css/trash-can-outline.svg");
     deleteImg.setAttribute("alt", "trasn-can-img");
+    deleteImg.setAttribute("id", i);
+    
 
     deleteButton.append(deleteImg);
 
@@ -51,10 +58,22 @@ function displayToDo (todos) {
     mainTaskDiv.append(taskDiv);
     
     }
-    console.log(todos);
 }
 
+function deleteTodo(event) {
+    const index = event.target.id;
 
+    for (let i = 0; i < projects.length; i++) {
+        if (projects[i].title == mainHeading.innerHTML) {
+        projects[i].todo.splice(index,1);
+        displayToDo(projects[i].todo);
+        }
+    }
+}
+
+function editTodo() {
+
+}
 
 
 

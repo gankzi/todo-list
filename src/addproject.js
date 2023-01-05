@@ -1,8 +1,25 @@
 import { displayProjects } from "./displayprojects";
+import { renderProjectContent } from "./projectcontents";
 
 const newProjectInput = document.querySelector("#project-name");
-const projects = [];
+const projects = [
+    {title: "Shopping", todo: [
+   {title: "Buy Milk",
+    description: "Buy 2% Fat Milk from Superstore",
+    dueDate: "2023-01-10",
+    priority: "medium"},
+    {title: "Buy Cereal",
+    description: "Buy cereal on sale from Superstore",
+    dueDate: "2023-01-10",
+    priority: "low"},
+    {title: "Buy eggs",
+    description: "Buy dozen pack of eggs",
+    dueDate: "2023-01-08",
+    priority: "high"}]}];
 
+
+renderProjectContent(projects[0].title, projects[0].todo);
+displayProjects(projects);
 
 
 const projectFactory = (title, todo) => {

@@ -1,6 +1,5 @@
 import { projects } from "./addproject";
 import { displayToDo } from "./displaytodo";
-import { renderProjectContent } from "./projectcontents";
 
 const todoTitle = document.querySelector('#title');
 const todoDescription = document.querySelector('#description');
@@ -26,8 +25,8 @@ function addToDo(event) {
     for (let i = 0; i < projects.length; i++) {
         if (projects[i].title == mainHeading.innerHTML) {
             projects[i].todo.push(newToDo);
+            displayToDo(projects[i].todo);
         }
-      displayToDo(projects[i].todo);
     };
 
     closeNewTaskForm();
