@@ -21,15 +21,15 @@
     <div id="main">
       <nav>
         <div id="todo">
-          <button>
+          <button id="inbox-button">
             <img src="../src/css/inbox.svg" alt="inbox-img" />
             Inbox
           </button>
-          <button>
+          <button id="today-button">
             <img src="../src/css/calendar-today-outline.svg" alt="today-img" />
             Today
           </button>
-          <button>
+          <button id="week-button">
             <img src="../src/css/calendar-month-outline.svg" alt="week-img" />
             This week
           </button>
@@ -92,6 +92,27 @@
               </select>
               <button type="submit" form="new-task" class="add-task">
                 Add
+              </button>
+            </div>
+          </form>
+          <form id="edit-task" action="" method="get">
+            <h3>Edit Task</h3>
+            <button type="button" class="cancel-edit-task">x</button>
+            <div class="edit-task-info">
+              <label for="edit-title">Title:</label>
+              <input type="text" id="edit-title" />
+              <label for="edit-description">Description:</label>
+              <input type="text" id="edit-description" />
+              <label for="edit-due-date">Due Date:</label>
+              <input type="date" id="edit-due-date" />
+              <label for="edit-priority-select">Priority:</label>
+              <select name="priority" id="edit-priority-select">
+                <option value="low" id="low" selected="selected">Low</option>
+                <option value="medium" id="medium">Medium</option>
+                <option value="high" id="high">High</option>
+              </select>
+              <button type="button" form="edit-task" class="edit-task">
+                Edit
               </button>
             </div>
           </form>
