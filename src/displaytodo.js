@@ -2,7 +2,15 @@ import { projects } from "./addproject";
 
 const mainTaskDiv = document.querySelector("#tasks");
 const mainHeading = document.querySelector('#main-heading');
+const editTask = document.querySelector('#edit-task');
+const editTodoTitle = document.querySelector('#edit-title');
+const editTodoDescription = document.querySelector('#edit-description');
+const editTodoDueDate = document.querySelector('#edit-due-date');
+const editTodoPriority = document.querySelector('#edit-priority-select');
+const editTaskButton = document.querySelector('.edit-task');
+const cancelEditButton = document.querySelector('.cancel-edit-task');
 
+cancelEditButton.addEventListener('click', closeEdit);
 
 function displayToDo (todos) {
     
@@ -39,8 +47,10 @@ function displayToDo (todos) {
 
 
     editButton.classList.add("task-edit");
+    editButton.addEventListener("click", openEdit);
     editImg.setAttribute("src", "../src/css/circle-edit-outline.svg");
     editImg.setAttribute("alt", "edit-img");
+    editImg.setAttribute("id", i);
 
     editButton.append(editImg);
 
@@ -71,11 +81,38 @@ function deleteTodo(event) {
     }
 }
 
-function editTodo() {
+function openEdit(event) {
+    const index = event.target.id;
 
+    editTask.style.display = "flex";
+
+    editTaskButton.addEventListener('click', () => editTodo(index));
+};
+
+function closeEdit() {
+
+    editTask.style.display = "none";
 }
 
+function editTodo(index) {
 
+    let title = editTodoTitle.value;
+    let description = editTodoDescription.value;
+    let dueDate = editTodoDueDate.value;
+    let priority = editTodoPriority.value;
+
+    for (let i = 0; i < projects.length; i++) {
+        if (projects[i].title == mainHeading.innerHTML) {
+            projects[i].todo[index].title = title;
+            projects[i].todo[index].description = description;
+            projects[i].todo[index].dueDate = dueDate;
+            projects[i].todo[index].priority = priority;
+            displayToDo(projects[i].todo);
+        }
+    };
+
+    closeEdit();
+}
 
 function toggleDone (taskDiv) {
     taskDiv.classList.toggle("done");
@@ -91,4 +128,4 @@ function toggleChecked(event) {
     }
 }
 
-export { displayToDo };
+export { displayToDo, editTodo};

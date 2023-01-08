@@ -181,7 +181,7 @@ h2 {
     margin-top: 20px;
 }
 
-#add-task-button {
+#add-task-button, #edit-task-button {
     margin-top: 20px;
     display: flex;
     width: 80%;
@@ -194,7 +194,7 @@ h2 {
     background: none;
 }
 
-#add-task-button:hover {
+#add-task-button:hover #edit-task-button:hover {
     background: var(--hover-color);
 }
 
@@ -219,7 +219,7 @@ h2 {
     height: 25px;
 }
 
-#new-task {
+#new-task, #edit-task {
     margin-top: 20px;
     width: 80%;
     border: .5px solid black;
@@ -232,18 +232,18 @@ h2 {
     display: none;
 }
 
-.new-task-info {
+.new-task-info, .edit-task-info {
     display: flex;
     gap: 5px;
     justify-content: space-between;
 }
 
-#new-task input, #new-task select {
+#new-task input, #new-task select, #edit-task input, #edit-task select {
     border-radius: 8px;
     border: .2px solid black;
 }
 
-#new-task select {
+#new-task select, #edit-task select {
     background: white;
 }
 
@@ -263,7 +263,7 @@ h2 {
     background: var(--high);
 }
 
-.add-task {
+.add-task, .edit-task {
     background: var(--sub-color);
     border: 0.5px solid black;
     cursor: pointer;
@@ -271,7 +271,7 @@ h2 {
     border-radius: 8px;
 }
 
-.cancel-add-task {
+.cancel-add-task, .cancel-edit-task {
     background: none;
     cursor: pointer;
     border: none;
