@@ -6,11 +6,11 @@ const projects = [
     {title: "Shopping", todo: [
    {title: "Buy Milk",
     description: "Buy 2% Fat Milk from Superstore",
-    dueDate: "2023-01-10",
+    dueDate: "2023-01-16",
     priority: "medium"},
     {title: "Buy Cereal",
     description: "Buy cereal on sale from Superstore",
-    dueDate: "2023-01-10",
+    dueDate: "2023-01-12",
     priority: "low"},
     {title: "Buy eggs",
     description: "Buy dozen pack of eggs",

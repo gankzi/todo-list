@@ -3,7 +3,10 @@ import './styles.css';
 import { addNewProject } from './addproject';
 import { renderProjectContent } from './projectcontents';
 import { projects } from './addproject';
-import { isToday } from 'date-fns';
+import { isToday } from 'date-fns'
+import { isThisWeek } from 'date-fns'
+import { parseISO } from 'date-fns'
+
 
 const addProject = document.querySelector("#add-project");
 const addNewProjects = document.querySelector("#add-new-project");
@@ -20,10 +23,13 @@ cancelNewProject.addEventListener('click', closeAddProject);
 addNewProjects.addEventListener('click', addNewProject);
 inboxButton.addEventListener('click', () => {
     getAllTodo();
-    console.log(inbox);
     renderProjectContent("Inbox", inbox)});
-todayButton.addEventListener('click', () => {renderProjectContent("Today", [])});
-weekButton.addEventListener('click', () => {renderProjectContent("This Week", [])});
+todayButton.addEventListener('click', () => {
+    getTodayTodo();
+    renderProjectContent("Today", today)});
+weekButton.addEventListener('click', () => {
+    getWeekTodo();
+    renderProjectContent("This Week", week)});
 
 function openAddProject() {
     document.querySelector("#new-project").style.display = "inline-flex";
@@ -50,13 +56,24 @@ function getAllTodo() {
 function getTodayTodo() {
     today.length = 0;
 
-    projects.forEach(project =>
-        project.todo.forEach(todo => 
-           if (isToday(todo.dueDate)) {
-            today.push(todo);
-           } 
-            ));
+    projects.forEach((project) => {
+        project.todo.forEach((todo) => {
+            if(isToday(parseISO(todo.dueDate))) {
+                today.push(todo);
+            }});
+        });  
 
+        };
+
+function getWeekTodo() {
+    week.length = 0;
+
+    projects.forEach((project) => {
+        project.todo.forEach((todo) => {
+            if(isThisWeek(parseISO(todo.dueDate))) {
+                week.push(todo);
+            }});
+        });  
 }
 
 document.body.appendChild(component());

@@ -18,7 +18,8 @@
   "homepage": "https://github.com/gankzi/todo-list#readme",
   "dependencies": {
     "date-fns": "^2.29.3",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4"
   },
   "devDependencies": {
     "css-loader": "^6.7.2",
