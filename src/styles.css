@@ -247,7 +247,7 @@ h2 {
     background: white;
 }
 
-#description {
+#description, #edit-description {
     width: 50%;
 }
 

@@ -7,15 +7,18 @@ const projects = [
    {title: "Buy Milk",
     description: "Buy 2% Fat Milk from Superstore",
     dueDate: "2023-01-16",
-    priority: "medium"},
+    priority: "medium",
+    project: "Shopping"},
     {title: "Buy Cereal",
     description: "Buy cereal on sale from Superstore",
     dueDate: "2023-01-12",
-    priority: "low"},
+    priority: "low",
+    project: "Shopping"},
     {title: "Buy eggs",
     description: "Buy dozen pack of eggs",
     dueDate: "2023-01-08",
-    priority: "high"}]}];
+    priority: "high",
+    project: "Shopping"}]}];
 
 
 renderProjectContent(projects[0].title, projects[0].todo);
@@ -41,7 +44,6 @@ function addNewProject(event) {
     clearProjectForm();
     closeAddProject(event);
 
-    console.log(projects);
 }
 
 function closeAddProject(event) {

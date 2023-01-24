@@ -47,9 +47,11 @@ function displayToDo (todos) {
 
 
     editButton.classList.add("task-edit");
-    editButton.addEventListener("click", openEdit);
+    editButton.addEventListener("click", (event) => { 
+        openEdit(event,todos[i].project)});
     editImg.setAttribute("src", "../src/css/circle-edit-outline.svg");
     editImg.setAttribute("alt", "edit-img");
+    editImg.setAttribute("class", todos[i].project)
     editImg.setAttribute("id", i);
 
     editButton.append(editImg);
@@ -73,6 +75,7 @@ function displayToDo (todos) {
 function deleteTodo(event) {
     const index = event.target.id;
 
+
     for (let i = 0; i < projects.length; i++) {
         if (projects[i].title == mainHeading.innerHTML) {
         projects[i].todo.splice(index,1);
@@ -81,28 +84,41 @@ function deleteTodo(event) {
     }
 }
 
-function openEdit(event) {
+function openEdit(event, proj) {
     const index = event.target.id;
-
     editTask.style.display = "flex";
 
-    editTaskButton.addEventListener('click', () => editTodo(index));
+    for (let i = 0; i < projects.length; i++) {
+        if (projects[i].title == proj) {
+            editTodoTitle.value = projects[i].todo[index].title;
+            editTodoDescription.value = projects[i].todo[index].description;
+            editTodoDueDate.value = projects[i].todo[index].dueDate;
+            editTodoPriority.value = projects[i].todo[index].priority;
+        }
+    }
+
+    function onEditClick() {
+        editTodo(index, proj);
+    }
+    
+    editTaskButton.addEventListener('click', onEditClick, {once : true});
 };
 
 function closeEdit() {
-
     editTask.style.display = "none";
 }
 
-function editTodo(index) {
+
+function editTodo(index, proj) {
 
     let title = editTodoTitle.value;
     let description = editTodoDescription.value;
     let dueDate = editTodoDueDate.value;
     let priority = editTodoPriority.value;
 
+
     for (let i = 0; i < projects.length; i++) {
-        if (projects[i].title == mainHeading.innerHTML) {
+        if (projects[i].title == proj) {
             projects[i].todo[index].title = title;
             projects[i].todo[index].description = description;
             projects[i].todo[index].dueDate = dueDate;
