@@ -1,4 +1,6 @@
 import { projects } from "./addproject";
+import { getAllTodo, getTodayTodo, getWeekTodo, inbox, today, week } from "./index";
+import { renderProjectContent } from "./projectcontents";
 
 const mainTaskDiv = document.querySelector("#tasks");
 const mainHeading = document.querySelector('#main-heading');
@@ -44,8 +46,7 @@ function displayToDo (todos) {
     titleP.innerHTML = todos[i].title;
     descriptionP.innerHTML = todos[i].description;
     dateP.innerHTML = todos[i].dueDate;
-
-
+        
     editButton.classList.add("task-edit");
     editButton.addEventListener("click", (event) => { 
         openEdit(event,todos[i].project)});
@@ -57,30 +58,52 @@ function displayToDo (todos) {
     editButton.append(editImg);
 
     deleteButton.classList.add("task-delete");
-    deleteButton.addEventListener("click", deleteTodo);
+    deleteButton.addEventListener("click", (event) => {
+        deleteTodo(event, todos[i].project)});
     deleteImg.setAttribute("src", "../src/css/trash-can-outline.svg");
     deleteImg.setAttribute("alt", "trasn-can-img");
     deleteImg.setAttribute("id", i);
     
-
     deleteButton.append(deleteImg);
 
     taskDiv.append(statusDiv, titleP, descriptionP, dateP, editButton, deleteButton);
    
     mainTaskDiv.append(taskDiv);
+
+    if (mainHeading == "Today" || mainHeading == "This Week" || mainHeading == "Inbox") {
+        editButton.disabled = true;
+        editImg.disabled = true;
+        deleteButton.disabled = true;
+        deleteImg.disabled = true;
+    }
+
     
     }
 }
 
-function deleteTodo(event) {
+function deleteTodo(event, proj) {
     const index = event.target.id;
 
-
     for (let i = 0; i < projects.length; i++) {
-        if (projects[i].title == mainHeading.innerHTML) {
+        if (projects[i].title == proj) {
         projects[i].todo.splice(index,1);
-        displayToDo(projects[i].todo);
+            if (mainHeading == "Inbox") {
+            getAllTodo();
+            renderProjectContent("Inbox", inbox);
+            console.log(inbox);
+             } else if (mainHeading == "Today") {
+            getTodayTodo();
+            renderProjectContent("Today", today);
+            console.log(today);
+             } else if (mainHeading == "This Week") {
+            getWeekTodo();
+            renderProjectContent("This Week", week);
+            console.log(week);
+            } else {
+             displayToDo(projects[i].todo);
+            }
         }
+
     }
 }
 

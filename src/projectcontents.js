@@ -22,9 +22,12 @@ function renderProjectContent (projectName, projectTodo) {
     contentTitle.innerHTML = projectName;
 
     displayToDo(projectTodo);
+    showAddTask();
 }
 
-
+function showAddTask() {
+    addTask.style.display = "flex";
+}
 
 function openNewTaskForm(event) {
     event.preventDefault();

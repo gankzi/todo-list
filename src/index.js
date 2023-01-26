@@ -14,6 +14,7 @@ const cancelNewProject = document.querySelector("#cancel-new-project");
 const inboxButton = document.querySelector('#inbox-button');
 const todayButton = document.querySelector('#today-button');
 const weekButton = document.querySelector('#week-button');
+const addTask = document.querySelector('#add-task-button');
 const inbox = [];
 const today = [];
 const week = [];
@@ -23,13 +24,20 @@ cancelNewProject.addEventListener('click', closeAddProject);
 addNewProjects.addEventListener('click', addNewProject);
 inboxButton.addEventListener('click', () => {
     getAllTodo();
-    renderProjectContent("Inbox", inbox)});
+    renderProjectContent("Inbox", inbox);
+    hideAddTask();
+});
+    
 todayButton.addEventListener('click', () => {
     getTodayTodo();
-    renderProjectContent("Today", today)});
+    renderProjectContent("Today", today);
+    hideAddTask();
+});
 weekButton.addEventListener('click', () => {
     getWeekTodo();
-    renderProjectContent("This Week", week)});
+    renderProjectContent("This Week", week);
+    hideAddTask();
+});
 
 function openAddProject() {
     document.querySelector("#new-project").style.display = "inline-flex";
@@ -45,6 +53,10 @@ function component() {
   
    return element;
   }
+
+function hideAddTask() {
+    addTask.style.display = "none";
+}
 
 function getAllTodo() {
     inbox.length = 0;
@@ -78,7 +90,7 @@ function getWeekTodo() {
 
 document.body.appendChild(component());
 
-export default {openAddProject};
+export {openAddProject, getAllTodo, getTodayTodo, getWeekTodo, inbox, today, week};
 
 
 // Add Project button will ask for name of the project and creates a project
