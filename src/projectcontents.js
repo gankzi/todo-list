@@ -22,6 +22,8 @@ const addTaskImg = document.querySelector('#add-task-img');
 const githubImg = document.querySelector('#github-img');
 
 
+setImgSrc();
+
 addTask.addEventListener('click', openNewTaskForm);
 addNewTask.addEventListener('click', addToDo);
 
@@ -52,6 +54,8 @@ function closeNewTaskForm(event) {
     document.querySelector('#new-task').style.display = "none";
 }
 
+function setImgSrc() {
+
 logoImg.setAttribute('src', Logo);
 inboxImg.setAttribute('src', Inbox);
 todayImg.setAttribute('src', Today);
@@ -60,7 +64,7 @@ addProjectImg.setAttribute('src', Plus);
 addTaskImg.setAttribute('src', Plus);
 githubImg.setAttribute('src', Github);
 
-
+};
 
 
 

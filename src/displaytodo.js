@@ -1,7 +1,7 @@
 import { projects } from "./addproject";
 import { getAllTodo, getTodayTodo, getWeekTodo, inbox, today, week } from "./index";
 import { renderProjectContent } from "./projectcontents";
-import EditImg from "../src/css/circle-edit-outline.svg"
+import EditImg from "../src/css/circle-edit-outline.svg";
 import DeleteImg from "../src/css/trash-can-outline.svg";
 
 const mainTaskDiv = document.querySelector("#tasks");
