@@ -1,7 +1,8 @@
 import { projects } from "./addproject";
 import { getAllTodo, getTodayTodo, getWeekTodo, inbox, today, week } from "./index";
 import { renderProjectContent } from "./projectcontents";
-import DeleteImg from "./css/trash-can-outline.svg";
+import EditImg from "../src/css/circle-edit-outline.svg"
+import DeleteImg from "../src/css/trash-can-outline.svg";
 
 const mainTaskDiv = document.querySelector("#tasks");
 const mainHeading = document.querySelector('#main-heading');
@@ -52,7 +53,7 @@ function displayToDo (todos) {
     editButton.setAttribute('id', 'editBtn');
     editButton.addEventListener("click", (event) => { 
         openEdit(event,todos[i].project)});
-    editImg.setAttribute("src", "../src/css/circle-edit-outline.svg");
+    editImg.setAttribute("src", EditImg);
     editImg.setAttribute("alt", "edit-img");
     editImg.setAttribute("class", todos[i].project)
     editImg.setAttribute("id", i);
