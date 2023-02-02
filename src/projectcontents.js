@@ -1,5 +1,13 @@
 import { addToDo } from "./createtodo";
 import { displayToDo } from "./displaytodo";
+import Logo from "../src/css/check-underline.svg";
+import Inbox from "../src/css/inbox.svg";
+import Today from "../src/css/calendar-today-outline.svg";
+import Week from "../src/css/calendar-month-outline.svg";
+import Plus from "../src/css/plus.svg";
+import Github from "../src/css/github.svg";
+
+
 
 const contentTitle = document.querySelector('#main-heading');
 const addTask = document.querySelector('#add-task-button');
@@ -12,12 +20,7 @@ const weekImg = document.querySelector('#week-img');
 const addProjectImg = document.querySelector('#add-project-img');
 const addTaskImg = document.querySelector('#add-task-img');
 const githubImg = document.querySelector('#github-img');
-const Logo = "../src/css/check-underline.svg";
-const Inbox = "../src/css/inbox.svg";
-const Today = "../src/css/calendar-today-outline.svg";
-const Week = "../src/css/calendar-month-outline.svg";
-const Plus = "../src/css/plus.svg";
-const Github = "../src/css/github.svg";
+
 
 addTask.addEventListener('click', openNewTaskForm);
 addNewTask.addEventListener('click', addToDo);
