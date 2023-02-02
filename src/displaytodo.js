@@ -48,6 +48,7 @@ function displayToDo (todos) {
     dateP.innerHTML = todos[i].dueDate;
         
     editButton.classList.add("task-edit");
+    editButton.setAttribute('id', 'editBtn');
     editButton.addEventListener("click", (event) => { 
         openEdit(event,todos[i].project)});
     editImg.setAttribute("src", "../src/css/circle-edit-outline.svg");
@@ -58,6 +59,7 @@ function displayToDo (todos) {
     editButton.append(editImg);
 
     deleteButton.classList.add("task-delete");
+    deleteButton.setAttribute('id', 'delBtn');
     deleteButton.addEventListener("click", (event) => {
         deleteTodo(event, todos[i].project)});
     deleteImg.setAttribute("src", "../src/css/trash-can-outline.svg");
@@ -69,16 +71,19 @@ function displayToDo (todos) {
     taskDiv.append(statusDiv, titleP, descriptionP, dateP, editButton, deleteButton);
    
     mainTaskDiv.append(taskDiv);
-
-    if (mainHeading == "Today" || mainHeading == "This Week" || mainHeading == "Inbox") {
-        editButton.disabled = true;
-        editImg.disabled = true;
-        deleteButton.disabled = true;
-        deleteImg.disabled = true;
-    }
-
     
     }
+
+    const delBtn = document.getElementsByClassName("task-edit");
+    const editBtn = document.getElementsByClassName("task-delete");
+
+    if (mainHeading.innerHTML == "Today" || mainHeading.innerHTML == "This Week" || mainHeading.innerHTML == "Inbox") {
+        for (let i = 0; i < delBtn.length; i++) {
+            delBtn[i].disabled = true;
+            editBtn[i].disabled = true;
+        }
+    }
+
 }
 
 function deleteTodo(event, proj) {
