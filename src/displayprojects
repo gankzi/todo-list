@@ -1,5 +1,6 @@
 import { deleteProject } from "./addproject";
 import { renderProjectContent } from "./projectcontents";
+import ProjectIcon from "../src/css/format-list-checkbox.svg";
 
 const projectDiv = document.querySelector('.list-of-projects');
 
@@ -17,7 +18,7 @@ function displayProjects(projects) {
         let delProjectButton = document.createElement('button');
         div.setAttribute('id', i);
         div.classList.add('project');
-        img.setAttribute('src', '../src/css/format-list-checkbox.svg');
+        img.setAttribute('src', ProjectIcon);
         img.setAttribute('alt', 'project-icon');
         projectButton.setAttribute('id', i);
         projectButton.classList.add('project-title');
