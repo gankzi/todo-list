@@ -1,6 +1,7 @@
 import { projects } from "./addproject";
 import { getAllTodo, getTodayTodo, getWeekTodo, inbox, today, week } from "./index";
 import { renderProjectContent } from "./projectcontents";
+import DeleteImg from "./css/trash-can-outline.svg";
 
 const mainTaskDiv = document.querySelector("#tasks");
 const mainHeading = document.querySelector('#main-heading');
@@ -62,7 +63,7 @@ function displayToDo (todos) {
     deleteButton.setAttribute('id', 'delBtn');
     deleteButton.addEventListener("click", (event) => {
         deleteTodo(event, todos[i].project)});
-    deleteImg.setAttribute("src", "../src/css/trash-can-outline.svg");
+    deleteImg.setAttribute("src", DeleteImg);
     deleteImg.setAttribute("alt", "trasn-can-img");
     deleteImg.setAttribute("id", i);
     
